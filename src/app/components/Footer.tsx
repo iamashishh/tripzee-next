@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <main className="bg-white pb-14 md:pb-0">
       {" "}
-      <footer className="bg-[#f9f6ee]  rounded-t-[50px] text-black">
+      <footer className="bg-[#f9f6ee]  rounded-t-[80px] text-black">
         <div className=" max-container py-12">
           {/* Top Section with Logo */}
           <div className=" w-full flex justify-center mb-10">

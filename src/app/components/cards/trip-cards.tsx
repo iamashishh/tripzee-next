@@ -103,7 +103,7 @@ export default function TripCard({
   badge,
 }: TripCardProps) {
   return (
-    <div className="relative  w-[296px] h-[364px] rounded-2xl overflow-hidden shadow-md border border-[#EAEAEA] group">
+    <div className="relative  w-[296px] h-[364px] rounded-[8px] overflow-hidden shadow-md border border-[#EAEAEA] group">
       <div className="absolute inset-0 w-full h-full">
         <Image
           src={image}

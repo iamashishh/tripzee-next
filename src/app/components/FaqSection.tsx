@@ -55,8 +55,8 @@ const faqs = [
 
 export default function FaqSection() {
   return (
-    <main className="overflow-hidden bg-white">
-      <section className="w-full flex  max-container justify-center py-8">
+    <main className="overflow-hidden py-12 bg-white">
+      <section className="w-full flex  max-container justify-center">
         <div className="w-full max-w-5xl bg-[#FFFCED] rounded-3xl py-10 px-6 md:px-10 shadow-sm">
           <h2 className="text-center text-black text-3xl font-extrabold mb-10">
             FAQ&apos;s
