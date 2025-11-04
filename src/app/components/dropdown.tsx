@@ -118,13 +118,13 @@ export function NavigationMenuDemo() {
                                  </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#">
+                  <Link href="/MICE">
                     <div className="font-bold text-normal">MICE</div>
               
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#">
+                  <Link href="/college-trips">
                     <div className="font-bold text-normal">College Trips</div>
                 
                   </Link>

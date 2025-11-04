@@ -21,7 +21,7 @@ function page() {
       <OfferBanner />
       <WhyTripzeeSection />
        <ConnectWithExpert />
-          <FaqSection />
+          <FaqSection title="Trip-zee FAQ'S" />
           <Reviews 
           title="Reviews"
           subtitle="We make travel simple and memorable. Explore dream destinations with zero stress."/>

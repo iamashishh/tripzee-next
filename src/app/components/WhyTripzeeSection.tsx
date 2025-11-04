@@ -5,8 +5,6 @@ import { BsShieldCheck, BsPeople, BsGift, BsHeadset } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
 import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
-import ProgressBar from "./ui/ProgressBar";
-import Reviews from "./global/Reviews";
 
 export default function WhyTripzeeSection() {
   const [scrollProgress, setScrollProgress] = useState(0);

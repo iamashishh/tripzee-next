@@ -33,65 +33,61 @@ const OfferBanner = () => {
   }, []);
 
   const banners = [
-    {
+
+{
       id: 1,
-      img: "/assets/hero.jpg",
-    },
-    {
-      id: 1,
-      img: "/assets/hero.jpg",
-    },{
-      id: 1,
-      img: "/assets/hero.jpg",
-    },{
-      id: 1,
-      img: "/assets/hero.jpg",
-    },{
-      id: 1,
-      img: "/assets/hero.jpg",
-    },{
-      id: 1,
-      img: "/assets/hero.jpg",
+      img: "/assets/offerbanner.png",
     },
     {
       id: 2,
-      img: "/assets/hero.jpg",
+      img: "/assets/offerbanner.png",
     },
     {
       id: 3,
-      img: "/assets/hero.jpg",
+      img: "/assets/offerbanner.png",
+    },
+    {
+      id: 1,
+      img: "/assets/offerbanner.png",
+    },
+    {
+      id: 2,
+      img: "/assets/offerbanner.png",
+    },
+    {
+      id: 3,
+      img: "/assets/offerbanner.png",
     },
   ];
 
   return (
     <section className="relative bg-white w-full py-2 overflow-hidden">
-  <div
-    className="overflow-visible rounded-2xl"
-    ref={emblaRef}
-    onMouseEnter={handleMouseEnter}
-    onMouseLeave={handleMouseLeave}
-  >
-    <div className="flex gap-4 px-4">
-      {banners.map((banner) => (
-        <div
-          key={banner.id}
-          className="flex-[0_0_110%] sm:flex-[100%] md:flex-[0_0_92%] min-w-0 transition-transform"
-        >
-          <div className="relative w-full h-[200px] sm:h-[330px] md:h-[364px] sm:rounded-2xl shadow-md overflow-hidden">
-            <Image
-              src={banner.img}
-              alt={`Offer ${banner.id}`}
-              fill
-              className="object-cover "
-              priority
-            />
-          </div>
+      <div
+        className="overflow-visible rounded-2xl"
+        ref={emblaRef}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className="flex gap-4 px-4">
+          {banners.map((banner) => (
+            <div
+              key={banner.id}
+              className="flex-[0_0_110%] sm:flex-[100%] md:flex-[0_0_92%] min-w-0 transition-transform"
+            >
+              <div className="relative w-full h-[200px] sm:h-[330px] md:h-[364px] sm:rounded-2xl shadow-md overflow-hidden">
+                <Image
+                  src={banner.img}
+                  alt={`Offer ${banner.id}`}
+                  fill
+                  className="object-cover "
+                  priority
+                />
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-
+      </div>
+    </section>
   );
 };
 

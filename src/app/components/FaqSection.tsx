@@ -8,6 +8,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+interface FaqSectionProps {
+  /** Optional dynamic title for the FAQ section */
+  title?: string;
+}
+
 const faqs = [
   {
     id: "01",
@@ -53,16 +58,18 @@ const faqs = [
   },
 ];
 
-export default function FaqSection() {
+const FaqSection: React.FC<FaqSectionProps> = ({ title = "FAQ's" }) => {
   return (
     <main className="overflow-hidden py-12 bg-white">
-      <section className="w-full flex  max-container justify-center">
+      <section className="w-full flex justify-center">
         <div className="w-full max-w-5xl bg-[#FFFCED] rounded-3xl py-10 px-6 md:px-10 shadow-sm">
-          <h2 className="text-center text-black text-3xl font-extrabold mb-10">
-            FAQ&apos;s
+          {/* ✅ Dynamic Title */}
+          <h2 className="text-center text-black text-3xl font-bold mb-10">
+            {title}
           </h2>
 
-          <Accordion type="single" collapsible className="w-full ">
+          {/* Accordion */}
+          <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem
                 key={faq.id}
@@ -96,4 +103,6 @@ export default function FaqSection() {
       </section>
     </main>
   );
-}
+};
+
+export default FaqSection;

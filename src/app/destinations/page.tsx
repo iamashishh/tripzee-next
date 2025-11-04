@@ -152,7 +152,7 @@ export default function HimachalPage() {
       <WhyTripzeeSection />
 
       <div className="bg-gray-100 py-12"><Reviews /></div>
-      <FaqSection />
+      <FaqSection title="Himachal FAQ'S" />
       <BlogStories />
     </main>
   );

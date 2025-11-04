@@ -229,11 +229,18 @@ function page() {
           </div>
         </div>
       </div>
-      <MomentsGallery/>
+         <div>
+           {" "}
+           <h1 className="text-3xl font-extrabold text-black max-container">
+              Moments!
+           </h1>
+               <MomentsGallery/>
+   
+         </div>
       <div className=""><Reviews /> </div>
       
       <WhyTripzeeSection />
-      <FaqSection />
+      <FaqSection title="Trip-zee FAQ'S" />
       <BlogStories />
     </main>
   );
