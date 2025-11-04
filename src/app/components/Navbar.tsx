@@ -3,6 +3,7 @@ import Image from "next/image";
 import { PhoneIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { NavigationMenuDemo } from "./dropdown";
 import { FaGoogle, FaInstagram, FaUserCircle } from "react-icons/fa";
+import Link from "next/link";
 
 interface TopBarItemProps {
   icon: React.ElementType;
@@ -80,13 +81,15 @@ const Navbar = () => (
     <nav className="w-full bg-white shadow-sm">
       <div className="max-container mx-auto flex items-center justify-between py-3 px-4 md:px-6">
         <div className="flex gap-3">
-          <Image
-            src="/assets/tripzelogo.png"
-            alt="Tripzee Holidays"
-            width={120}
-            height={40}
-            className="object-contain"
-          />
+          <Link href="/">
+          <Image      
+              src="/assets/tripzelogo.png"
+              alt="Tripzee Holidays"
+              width={120}
+              height={40}
+              className="object-contain"
+            />
+          </Link>
           <PhoneButton />
         </div>
         <div className="hidden  xl:flex items-center space-x-6">

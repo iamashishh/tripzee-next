@@ -5,6 +5,7 @@ import WhyTripzeeSection from "../components/WhyTripzeeSection";
 import FaqSection from "../components/FaqSection";
 import Reviews from "../components/global/Reviews";
 import ConnectWithExpert from "../components/ConnectWithExpert";
+import TripsFilter from "../components/sections/upcoming-filter";
 
 function page() {
   return (
@@ -16,6 +17,7 @@ function page() {
           backgroundImage="/assets/hero.jpg"
         />
       </div>
+      <TripsFilter/>
       <OfferBanner />
       <WhyTripzeeSection />
        <ConnectWithExpert />

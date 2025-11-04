@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const demoDestinations = [
   {
@@ -112,9 +113,7 @@ const DestinationCard = ({
 
    
 
-    x
-
-      {/* Hover Button */}
+<Link href={"/destinations"}>
       <div
         className="
           absolute bottom-3 left-1/2 -translate-x-1/2 w-[92%]
@@ -127,6 +126,7 @@ const DestinationCard = ({
       >
         Explore Now
       </div>
+</Link>
 
       {/* Bottom Gradient Fade */}
       <div className="absolute inset-x-0 bottom-0 h-[35%] bg-linear-to-t from-black/60 to-transparent pointer-events-none z-10"></div>

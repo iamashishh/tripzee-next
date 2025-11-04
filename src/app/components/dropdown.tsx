@@ -102,7 +102,7 @@ export function NavigationMenuDemo() {
         {/* -------- DOCS LINK -------- */}
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">Honeymoon Packages</Link>
+            <Link href="/honeymoon-escapes">Honeymoon Packages</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
 
@@ -113,27 +113,20 @@ export function NavigationMenuDemo() {
             <ul className="grid w-[300px] gap-4">
               <li>
                 <NavigationMenuLink asChild>
+                  <Link href="/upcoming-trips">
+                    <div className="font-bold text-normal">Upcoming Trips</div>
+                                 </Link>
+                </NavigationMenuLink>
+                <NavigationMenuLink asChild>
                   <Link href="#">
-                    <div className="font-medium">Components</div>
-                    <div className="text-muted-foreground">
-                      Browse all components in the library.
-                    </div>
+                    <div className="font-bold text-normal">MICE</div>
+              
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
                   <Link href="#">
-                    <div className="font-medium">Documentation</div>
-                    <div className="text-muted-foreground">
-                      Learn how to use the library.
-                    </div>
-                  </Link>
-                </NavigationMenuLink>
-                <NavigationMenuLink asChild>
-                  <Link href="#">
-                    <div className="font-medium">Blog</div>
-                    <div className="text-muted-foreground">
-                      Read our latest blog posts.
-                    </div>
+                    <div className="font-bold text-normal">College Trips</div>
+                
                   </Link>
                 </NavigationMenuLink>
               </li>

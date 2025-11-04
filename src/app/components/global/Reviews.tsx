@@ -51,7 +51,7 @@ export default function Reviews({
 
   return (
     <div>
-      <div className="   py-12 max-container ">
+      <div className="  bg-white py-12 max-container ">
         <div className="flex  justify-between">
           <div>
             {" "}

@@ -64,7 +64,6 @@ export default function WhyTripzeeSection() {
     },
   ];
 
-  const reviews = [1, 2, 3, 4, 5]; // add more to see scroll properly
 
   return (
     <main className="bg-white overflow-hidden">
