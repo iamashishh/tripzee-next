@@ -92,8 +92,8 @@ const FaqSection: React.FC<FaqSectionProps> = ({ title = "FAQ's" }) => {
                 </AccordionContent>
 
                 {index !== faqs.length - 1 && (
-                  <div className="w-full my-2">
-                    <div className="h-px hidden sm:block w-full bg-linear-to-r from-transparent via-black to-transparent"></div>
+                  <div className="w-full  sm:my-2">
+                    <div className="h-px  w-full bg-linear-to-r from-transparent via-black to-transparent"></div>
                   </div>
                 )}
               </AccordionItem>

@@ -147,9 +147,9 @@ export function NavigationMenuDemo() {
             <ul className="grid w-[200px] gap-4">
               <li>
                 <NavigationMenuLink asChild>
-                  <Link href="#" className="flex items-center gap-2">
+                  <Link href="/contact-us" className="flex items-center gap-2">
                     <CircleHelpIcon />
-                    Backlog
+                    Contact Us
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>

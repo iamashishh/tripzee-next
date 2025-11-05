@@ -92,6 +92,7 @@ export default function BottomBar() {
       {/* CONTACT DRAWER */}
       <Drawer>
         <DrawerTrigger>
+          <Link href="/contact-us">
           <div className="flex flex-col items-center justify-center gap-1">
             <MdOutlinePermContactCalendar
               className="size-6 opacity-90"
@@ -99,13 +100,13 @@ export default function BottomBar() {
             <p className="text-[11px] opacity-70">
               Contact
             </p>
-          </div>
+          </div></Link>
         </DrawerTrigger>
 
-        <DrawerContent className="h-fit bg-white rounded-t-xl pb-6">
+        {/* <DrawerContent className="h-fit bg-white rounded-t-xl pb-6">
           <div className="flex items-center justify-evenly gap-6 py-8 px-6">
             <Link
-              href="https://wa.me/+919512858781"
+              href="/contact-us"
               target="_blank"
               rel="nofollow"
               className="flex flex-col items-center"
@@ -137,7 +138,7 @@ export default function BottomBar() {
               <p className="text-xs mt-2">Email Us</p>
             </Link>
           </div>
-        </DrawerContent>
+        </DrawerContent> */}
       </Drawer>
     </div>
   );
