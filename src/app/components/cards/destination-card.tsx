@@ -90,11 +90,7 @@ interface DestinationCardProps {
   image: string;
 }
 
-const DestinationCard = ({
-  title,
-  packages,
-  image,
-}: DestinationCardProps) => {
+const DestinationCard = ({ title, packages, image }: DestinationCardProps) => {
   return (
     <div className="group relative flex flex-col items-start w-[296px] h-[364px] p-2 gap-2.5 shrink-0 overflow-hidden rounded-[12px] shadow-lg cursor-pointer">
       {/* Image */}
@@ -111,11 +107,9 @@ const DestinationCard = ({
         {packages.toString().padStart(2, "0")} Packages
       </div>
 
-   
-
-<Link href={"/destinations"}>
-      <div
-        className="
+      <Link href={"/destinations"}>
+        <div
+          className="
           absolute bottom-3 left-1/2 -translate-x-1/2 w-[92%]
           bg-white text-black font-bold py-2 rounded-[5px] text-center
           opacity-0 translate-y-4
@@ -123,10 +117,10 @@ const DestinationCard = ({
           group-hover:opacity-100 group-hover:translate-y-0
           shadow-lg z-20
         "
-      >
-        Explore Now
-      </div>
-</Link>
+        >
+          Explore Now
+        </div>
+      </Link>
 
       {/* Bottom Gradient Fade */}
       <div className="absolute inset-x-0 bottom-0 h-[35%] bg-linear-to-t from-black/60 to-transparent pointer-events-none z-10"></div>
