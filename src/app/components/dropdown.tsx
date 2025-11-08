@@ -18,9 +18,9 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline"
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
-    description: "A modal dialog that interrupts the user with important content and expects a response.",
+    title: "Package Page",
+    href: "/package",
+    description: "",
   },
   {
     title: "Hover Card",
@@ -66,14 +66,13 @@ export function NavigationMenuDemo() {
                     className="from-muted/50 to-muted flex h-full w-full flex-col justify-end rounded-md  p-4 no-underline outline-hidden transition-all duration-200 select-none focus:shadow-md md:p-6"
                   >
                     <div className="mb-2 text-lg font-medium sm:mt-4">shadcn/ui</div>
-                    <p className="text-muted-foreground text-sm leading-tight">
+                    {/* <p className="text-muted-foreground text-sm leading-tight">
                       Beautifully designed components built with Tailwind CSS.
-                    </p>
+                    </p> */}
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/docs" title="Introduction">
-                Re-usable components built using Radix UI and Tailwind CSS.
+              <ListItem href="/destination" title="Destinations Page">
               </ListItem>
               <ListItem href="/docs/installation" title="Installation">
                 How to install dependencies and structure your app.
