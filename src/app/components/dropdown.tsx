@@ -72,7 +72,7 @@ export function NavigationMenuDemo() {
                   </Link>
                 </NavigationMenuLink>
               </li>
-              <ListItem href="/destination" title="Destinations Page">
+              <ListItem href="/upcoming-trips" title="Destinations Page">
               </ListItem>
               <ListItem href="/docs/installation" title="Installation">
                 How to install dependencies and structure your app.
