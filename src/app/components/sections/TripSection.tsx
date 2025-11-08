@@ -1,5 +1,6 @@
 import TripSlider from "../sliders/trip-slider";
 import { tripsData } from "../cards/trip-cards";
+import Link from "next/link";
 
 interface CustomLabelProps {
   label: string;
@@ -32,7 +33,12 @@ async function TripSection({ title, width = 20 }: TripSectionProps) {
         <CustomLabel label={title} width={width} />
       </div>
 
-      <TripSlider data={result.data} />
+      
+      <Link href="/package">
+        <TripSlider data={result.data} />
+
+      </Link>
+        
     </section>
     </main>
 

@@ -65,6 +65,7 @@ export default function TripSlider({ data }: TripSliderProps) {
         <div className="flex gap-6 ">
           {data.map((trip, index) => (
             <div key={index} className="flex-[0_0_20%]">
+              
               <TripCard
                 image={trip.image}
                 title={trip.title}

@@ -9,6 +9,8 @@ import {
   DrawerTitle,
   DrawerDescription,
 } from "@/components/ui/drawer";
+import FaqSection from "../components/FaqSection";
+import Reviews from "../components/global/Reviews";
 
 // Inline SVG icon components to avoid react-icons dependency issues
 const IconMap = ({ className = "w-5 h-5" }) => (
@@ -111,6 +113,43 @@ const IconClose = ({ className = "w-4 h-4" }) => (
 );
 
 export default function TourDetails() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const policies = [
+    {
+      title: "Cancellation Policy",
+      content:
+        "Cancellations made within 24 hours of booking will receive a full refund. After that, partial or no refund may apply depending on the package terms.",
+    },
+    {
+      title: "Refund Policy",
+      content:
+        "Refunds are processed within 7-10 business days. Refund amounts depend on cancellation time and booking conditions.",
+    },
+  ];
+
+  const toggleAccordion = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const IconChevronDown = ({ className = "w-5 h-5" }) => (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+    >
+      <path
+        d="M6 9l6 6 6-6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+
   const GallerySection = () => {
     const images = [
       { id: 1, src: "/assets/hero.jpg", alt: "Jodhpur Fort" },
@@ -495,6 +534,39 @@ export default function TourDetails() {
                 ))}
               </ul>
             </div>
+
+            {/* POLICY ACCORDION SECTION - Mobile: appears here, Desktop: hidden */}
+            <div className="lg:hidden border-t pt-10 mt-10">
+              <div className="w-full mx-auto space-y-3">
+                {policies.map((item, index) => (
+                  <div
+                    key={index}
+                    className="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
+                  >
+                    <button
+                      onClick={() => toggleAccordion(index)}
+                      className="w-full flex justify-between items-center px-5 py-4 text-left text-gray-900 font-medium hover:bg-gray-50 transition"
+                    >
+                      <span>{item.title}</span>
+                      <IconChevronDown
+                        className={`w-5 h-5 text-gray-700 transform transition-transform duration-300 ${
+                          openIndex === index ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    <div
+                      className={`px-5 pb-4 text-gray-600 text-sm transition-all duration-300 ease-in-out ${
+                        openIndex === index
+                          ? "max-h-40 opacity-100"
+                          : "max-h-0 opacity-0 overflow-hidden"
+                      }`}
+                    >
+                      {item.content}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           {/* RIGHT SIDEBAR */}
@@ -571,8 +643,44 @@ export default function TourDetails() {
               </p>
             </div>
           </div>
+
+          {/* POLICY ACCORDION SECTION - Desktop: appears here, Mobile: hidden */}
+          <div className="hidden lg:block border-t pt-10 mt-10">
+            <div className="w-full mx-auto space-y-3">
+              {policies.map((item, index) => (
+                <div
+                  key={index}
+                  className="border border-gray-200 rounded-lg overflow-hidden shadow-sm"
+                >
+                  <button
+                    onClick={() => toggleAccordion(index)}
+                    className="w-full flex justify-between items-center px-5 py-4 text-left text-gray-900 font-medium hover:bg-gray-50 transition"
+                  >
+                    <span>{item.title}</span>
+                    <IconChevronDown
+                      className={`w-5 h-5 text-gray-700 transform transition-transform duration-300 ${
+                        openIndex === index ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                  <div
+                    className={`px-5 pb-4 text-gray-600 text-sm transition-all duration-300 ease-in-out ${
+                      openIndex === index
+                        ? "max-h-40 opacity-100"
+                        : "max-h-0 opacity-0 overflow-hidden"
+                    }`}
+                  >
+                    {item.content}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
+      <Reviews/>
+      <FaqSection/>
+
     </main>
   );
 }

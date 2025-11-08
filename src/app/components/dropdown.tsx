@@ -136,7 +136,7 @@ export function NavigationMenuDemo() {
 
         <NavigationMenuItem>
           <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-            <Link href="/docs">Blog</Link>
+            <Link href="/blogs">Blog</Link>
           </NavigationMenuLink>
         </NavigationMenuItem>
 
@@ -153,9 +153,9 @@ export function NavigationMenuDemo() {
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#" className="flex items-center gap-2">
+                  <Link href="/articles" className="flex items-center gap-2">
                     <CircleIcon />
-                    To Do
+                    Article
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
