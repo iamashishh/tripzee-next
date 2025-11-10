@@ -158,9 +158,9 @@ export function NavigationMenuDemo() {
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="#" className="flex items-center gap-2">
+                  <Link href="/about-us" className="flex items-center gap-2">
                     <CircleCheckIcon />
-                    Done
+                    About Us
                   </Link>
                 </NavigationMenuLink>
               </li>

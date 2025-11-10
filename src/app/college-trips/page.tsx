@@ -150,7 +150,7 @@ function page() {
       <div>
         {" "}
         <h1 className="text-3xl font-extrabold text-black max-container">
-          Corporate Tours Moments!
+          College Trips Moments!
         </h1>
         <MomentsGallery />
         <FaqSection title="Trip-zee FAQ'S" />

@@ -20,9 +20,9 @@ const KashmirSection = () => {
           priority
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-black/60 via-black/40 to-transparent"></div>
 
-        <div className="relative z-10 max-w-3xl px-5 sm:px-10 lg:px-20">
+        <div className="relative z-10 max-w-4xl md:mt-32 px-5 sm:px-10 lg:px-20">
           <h1 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
             Kashmir – Where Every View <br className="hidden sm:block" />
             <span className="text-white">Feels Like a Dream</span>

@@ -75,7 +75,7 @@ const EnquiryForm: React.FC = () => {
               <div className="flex items-center border border-gray-300 rounded-md px-3 py-2">
                 <input
                   type="text"
-                  placeholder="Sujood Qureshi"
+                  placeholder=" Your Name"
                   className="w-full outline-none text-sm text-gray-800 placeholder-gray-400"
                 />
                 <FiUser className="text-gray-500" />
@@ -90,7 +90,7 @@ const EnquiryForm: React.FC = () => {
               <div className="flex items-center border border-gray-300 rounded-md px-3 py-2">
                 <input
                   type="email"
-                  placeholder="flashysolutions@gmail.com"
+                  placeholder="tripzeholidays@gmail.com"
                   className="w-full outline-none text-sm text-gray-800 placeholder-gray-400"
                 />
                 <FiMail className="text-gray-500" />
