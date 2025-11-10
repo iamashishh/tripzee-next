@@ -66,7 +66,7 @@ const Footer = () => {
                 <ul className="space-y-1 text-sm">
                   <li>
                     <Link
-                      href="/about"
+                      href="/about-us"
                       className="hover:text-gray-600 transition"
                     >
                       About us
@@ -74,7 +74,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/contact"
+                      href="/contact-us"
                       className="hover:text-gray-600 transition"
                     >
                       Contact us
@@ -82,7 +82,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/privacy"
+                      href="/privacy-policy"
                       className="hover:text-gray-600 transition"
                     >
                       Privacy & policy
@@ -94,13 +94,13 @@ const Footer = () => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="#" className="hover:text-gray-600 transition">
+                    <Link href="#faqsection" className="hover:text-gray-600 transition">
                       FAQs
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href="/blog"
+                      href="/blogs"
                       className="hover:text-gray-600 transition"
                     >
                       Blog
@@ -225,7 +225,7 @@ const Footer = () => {
                 <ul className="space-y-1 text-sm">
                   <li>
                     <Link
-                      href="/packages/mice"
+                      href="/MICE"
                       className="hover:text-gray-600 transition"
                     >
                       MICE Tours
@@ -233,7 +233,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/packages/college"
+                      href="/college-trips"
                       className="hover:text-gray-600 transition"
                     >
                       College Trips
@@ -241,7 +241,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="/packages/honeymoon"
+                      href="/honeymoon-escapes"
                       className="hover:text-gray-600 transition"
                     >
                       Honeymoon Packages
