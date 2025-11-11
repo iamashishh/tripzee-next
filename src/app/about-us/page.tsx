@@ -119,7 +119,7 @@ Wander Beyond Ordinary"
         </h3>
       </div>
       <div className="relative w-full flex flex-col items-center py-8">
-        <h2 className="lg:text-5xl text-black text-3xl md:text-4xl font-extrabold my-16 text-center">
+        <h2 className="lg:text-5xl text-black text-2xl md:text-3xl font-extrabold my-16 text-center">
           Welcome to Tripzee Holidays
         </h2>
 

@@ -112,9 +112,10 @@ const DestinationCard = ({ title, packages, image }: DestinationCardProps) => {
           className="
           absolute bottom-3 left-1/2 -translate-x-1/2 w-[92%]
           bg-white text-black font-bold py-2 rounded-[5px] text-center
-          opacity-0 translate-y-4
+          opacity-100 translate-y-0
+          md:opacity-0 md:translate-y-4
           transition-all duration-500 ease-out
-          group-hover:opacity-100 group-hover:translate-y-0
+          md:group-hover:opacity-100 md:group-hover:translate-y-0
           shadow-lg z-20
         "
         >

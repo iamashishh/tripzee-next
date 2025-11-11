@@ -4,6 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import Image from "next/image";
 import { HiVolumeOff, HiVolumeUp } from "react-icons/hi";
+import ProgressBar from "./ui/ProgressBar";
 export default function ReelsCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
@@ -17,7 +18,7 @@ export default function ReelsCarousel() {
 
   const videosRef = useRef<Array<HTMLVideoElement | null>>([]);
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const reels = [
     {
@@ -60,33 +61,10 @@ export default function ReelsCarousel() {
   // ✅ Global mute state
   const [isMuted, setIsMuted] = useState(true);
 
-  useEffect(() => {
-    if (!emblaApi) return;
-
-    const onSelect = () => {
-      const selectedIndex = emblaApi.selectedScrollSnap();
-      setCurrentSlide(selectedIndex);
-    };
-
-    const onInit = () => {
-      setCurrentSlide(0);
-      playIndex(0);
-    };
-
-    emblaApi.on("select", onSelect);
-    emblaApi.on("init", onInit);
-
-    return () => {
-      emblaApi.off("select", onSelect);
-      emblaApi.off("init", onInit);
-    };
-  }, [emblaApi]);
-
   const pauseAll = useCallback(() => {
     videosRef.current.forEach((v) => {
       if (v) {
         v.pause();
-        setIsPaused(true);
       }
     });
   }, []);
@@ -98,13 +76,36 @@ export default function ReelsCarousel() {
       if (!vid) return;
       try {
         await vid.play();
-        setIsPaused(false);
       } catch (error) {
         console.error("Failed to play video:", error);
       }
     },
     [pauseAll]
   );
+
+  useEffect(() => {
+    if (!emblaApi) return;
+
+    const onSelect = () => {
+      const selectedIndex = emblaApi.selectedScrollSnap();
+      setCurrentSlide(selectedIndex);
+      setScrollProgress((selectedIndex + 1) / reels.length);
+    };
+
+    const onInit = () => {
+      setCurrentSlide(0);
+      setScrollProgress(1 / reels.length);
+      playIndex(0);
+    };
+
+    emblaApi.on("select", onSelect);
+    emblaApi.on("init", onInit);
+
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("init", onInit);
+    };
+  }, [emblaApi, playIndex, reels.length]);
 
   const togglePlayPause = useCallback(
     (index: number) => {
@@ -115,7 +116,6 @@ export default function ReelsCarousel() {
         playIndex(index);
       } else {
         vid.pause();
-        setIsPaused(true);
       }
     },
     [playIndex]
@@ -163,19 +163,18 @@ export default function ReelsCarousel() {
   useEffect(() => () => pauseAll(), [pauseAll]);
 
   return (
-    <main className=" bg-white overflow-hidden" >
+    <main className=" bg-white overflow-hidden">
+      <section className="w-full sm:block max-container  hidden  py-2  relative">
+        <h2 className="text-heading mb-6 px-4">
+          Live the Adventure
+        </h2>
 
-    <section className="w-full sm:block max-container  hidden  py-2  relative">
-      <h2 className="text-3xl font-bold mb-6 text-black px-4">
-        Live the Adventure
-      </h2>
-
-      <div className="overflow-hidden px-4" ref={emblaRef}>
-        <div className="flex gap-4">
-          {reels.map((item, i) => (
-            <div
-              key={item.id}
-              className="
+        <div className="overflow-hidden px-4" ref={emblaRef}>
+          <div className="flex gap-4">
+            {reels.map((item, i) => (
+              <div
+                key={item.id}
+                className="
                 relative rounded-2xl overflow-hidden bg-black
                 flex-[0_0_80%]
                 md:flex-[0_0_45%]
@@ -184,73 +183,69 @@ export default function ReelsCarousel() {
                 h-[380px]
                 select-none
               "
-            >
-              <Image
-                src="/assets/tripzelogo.png"
-                alt="logo"
-                width={80}
-                height={40}
-                className="absolute top-3 right-3 z-10"
-              />
+              >
+                <Image
+                  src="/assets/tripzelogo.png"
+                  alt="logo"
+                  width={80}
+                  height={40}
+                  className="absolute top-3 right-3 z-10"
+                />
 
-              {item.poster && (
-                <div className="absolute inset-0 z-0">
-                  <Image
-                    src={item.poster}
-                    alt="poster"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              )}
+                {item.poster && (
+                  <div className="absolute inset-0 z-0">
+                    <Image
+                      src={item.poster}
+                      alt="poster"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
 
-              <video
-                ref={(el) => {
-                  videosRef.current[i] = el;
-                }}
-                src={item.video}
-                loop
-                muted={isMuted}
-                onClick={() => handleVideoClick(i)}
-                onEnded={handleEnded}
-                className="w-full h-full object-cover relative z-5"
-                playsInline
-                preload="metadata"
-              />
+                <video
+                  ref={(el) => {
+                    videosRef.current[i] = el;
+                  }}
+                  src={item.video}
+                  loop
+                  muted={isMuted}
+                  onClick={() => handleVideoClick(i)}
+                  onEnded={handleEnded}
+                  className="w-full h-full object-cover relative z-5"
+                  playsInline
+                  preload="metadata"
+                />
 
-              <button
-                onClick={(e) => {
-                  e.stopPropagation();
-                  toggleMute();
-                }}
-                className="
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    toggleMute();
+                  }}
+                  className="
                   absolute bottom-4 right-4 z-20
                   bg-black/60 text-white p-2 rounded-full text-md
                 "
-              >
-                {isMuted ? <HiVolumeOff size={18} /> : <HiVolumeUp size={18} />}
-              </button>
-            </div>
-          ))}
+                >
+                  {isMuted ? (
+                    <HiVolumeOff size={18} />
+                  ) : (
+                    <HiVolumeUp size={18} />
+                  )}
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Progress Bar */}
-      <div className="mt-6 px-4 max-w-[300px] mx-auto">
-        <div className="h-0.5 bg-gray-200 rounded-full relative overflow-hidden">
-          <div
-            className="h-full bg-black rounded-full transition-transform duration-300 ease-out absolute left-0 top-0"
-            style={{
-              width: `${
-                ((emblaApi?.selectedScrollSnap() || 0) / (reels.length - 1)) *
-                100
-              }%`,
-            }}
+        <div className="mt-6 px-4 max-w-[300px] mx-auto">
+          <ProgressBar
+            progress={scrollProgress}
+            activeIndex={currentSlide}
+            total={reels.length}
           />
         </div>
-      </div>
-    </section>
+      </section>
     </main>
-
   );
 }

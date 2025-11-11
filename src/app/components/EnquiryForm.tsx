@@ -9,7 +9,7 @@ const EnquiryForm: React.FC = () => {
     <section className="w-full bg-[#FAFAFA overflow-hidden py-16 md:py-24">
       <div className="max-container mx-auto px-5 sm:px-10 lg:px-16">
         {/* Section Title */}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-center mb-12 text-black">
+        <h2 className="text-heading text-center mb-12">
           Let&apos;s plan your dream trip!
         </h2>
 

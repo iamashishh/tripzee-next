@@ -7,7 +7,7 @@ const WhyChooseUs: React.FC = () => {
     <section className="w-full bg-white py-8 md:py-12">
       <div className="max-container mx-auto px-5 sm:px-10 lg:px-16 ">
         {/* Section Title */}
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-black mb-14">
+        <h2 className="text-heading mb-14">
           Why Choose Us!
         </h2>
 

@@ -63,7 +63,7 @@ Our expert planners handle everything — itineraries, accommodations, transport
       <section className="w-full bg-white py-8 md:py-12">
         <div className="max-container mx-auto px-5 sm:px-10 lg:px-16">
           {/* Section Title */}
-          <h2 className="text-center text-2xl sm:text-3xl lg:text-4xl font-semibold text-black mb-14">
+          <h2 className="text-center text-heading mb-14">
             Why Companies Love Traveling with Us
           </h2>
 
@@ -104,7 +104,7 @@ Our expert planners handle everything — itineraries, accommodations, transport
         </div>
       </section>
       <TopDestinations
-        sectionTitle="Explore Our Top Corporate Trip Destinations"
+        sectionTitle="Top Corporate Destinations"
         destinations={[
           { name: "Dubai", image: "/assets/hero.jpg" },
           { name: "Jaipur", image: "/assets/hero.jpg" },
@@ -171,7 +171,7 @@ Our expert planners handle everything — itineraries, accommodations, transport
       <Reviews />
       <div>
         {" "}
-        <h1 className="text-3xl font-extrabold text-black max-container">
+        <h1 className="text-heading max-container">
           Corporate Tours Moments!
         </h1>
         <MomentsGallery />

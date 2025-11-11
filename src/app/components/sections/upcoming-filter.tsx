@@ -121,7 +121,7 @@ export default function TripsFilter() {
     <div className="space-y-6 py-12 max-container">
          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
       {/* Heading */}
-      <h1 className="text-black text-2xl font-extrabold tracking-tight">
+      <h1 className="text-heading tracking-tight">
         All Upcoming Trips
       </h1>
 

@@ -9,7 +9,7 @@ interface CustomLabelProps {
 
 const CustomLabel = ({ label}: CustomLabelProps) => (
   <div className="flex flex-col gap-2">
-    <h2 className="text-[26px] md:text-3xl text-black lg:text-4xl font-extrabold">
+    <h2 className="text-heading">
       {label}
     </h2>
   </div>

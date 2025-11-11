@@ -151,7 +151,7 @@ function page() {
         />
       </div>
       <div className="max-container overflow-hidden py-6 sm:py-12">
-        <h1 className="text-2xl sm:text-3xl font-bold text-black mb-6">
+        <h1 className="text-heading mb-6">
           Honeymoon Escapes
         </h1>
 
@@ -231,7 +231,7 @@ function page() {
       </div>
          <div>
            {" "}
-           <h1 className="text-3xl font-extrabold text-black max-container">
+           <h1 className="text-heading max-container">
               Moments!
            </h1>
                <MomentsGallery/>

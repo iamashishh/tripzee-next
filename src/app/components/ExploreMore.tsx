@@ -19,7 +19,7 @@ export default function ExploreMore() {
     <main className="bg-[#F7F7F7]" >
 
     <section className="w-full max-container  py-10">
-      <h2 className="md:text-3xl text-[26px] font-extrabold mb-6 text-black ">Explore More</h2>
+      <h2 className="text-heading mb-6 text-black ">Explore More</h2>
 
       <div className="  mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8 ">
         {/* LEFT CARDS */}

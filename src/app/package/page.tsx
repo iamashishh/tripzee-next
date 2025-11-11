@@ -275,7 +275,7 @@ export default function TourDetails() {
           {/* LEFT CONTENT */}
           <div className="min-h-screen">
             {/* TITLE SECTION */}
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#111] mb-4 sm:mb-6">
+            <h1 className="text-heading mb-4 sm:mb-6">
               Rajasthan: Jodhpur- Jaisalmer- Jaipur
             </h1>
 
@@ -303,7 +303,7 @@ export default function TourDetails() {
 
             {/* TRIP OVERVIEW BOX */}
             <div className="border-t border-[#FFCC00]/30 rounded-md bg-linear-to-b from-[#FFFDEE] to-transparent p-5 sm:p-6 mb-8">
-              <h3 className="text-lg sm:text-xl font-semibold mb-3 text-black">
+              <h3 className="text-lg sm:text-2xl font-semibold mb-3 text-black">
                 Trip Overview
               </h3>
               <p className="text-gray-700 leading-relaxed">
@@ -576,10 +576,10 @@ export default function TourDetails() {
                 <p className="text-base text-gray-700 mb-1 font-medium">
                   Price From
                 </p>
-                <h2 className="text-4xl font-extrabold text-black mb-1">
+                <h2 className="text-heading mb-1">
                   Rs. 39,000/-
                 </h2>
-                <p className="line-through text-gray-700 text-2xl font-bold mb-4">
+                <p className="line-through text-gray-700 text-[22px] font-bold mb-4">
                   89,999 INR/-
                 </p>
                 <button className="w-full bg-[#FFCC00] text-base hover:bg-[#FFD633] text-black font-semibold py-3 rounded-full transition-all">

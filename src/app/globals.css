@@ -95,7 +95,7 @@
   }
 
   body {
-    @apply bg-[var(--background)] text-[var(--foreground)] font-sans antialiased;
+    @apply bg-background text-foreground font-sans antialiased;
   }
 
   *,
@@ -107,16 +107,16 @@
 
 /* ===== Utility Helpers ===== */
 .max-container {
-  @apply mx-auto w-full h-full max-w-[111rem] px-5 sm:px-8 md:px-10 lg:px-16 xl:px-20 2xl:px-24;
+  @apply mx-auto w-full h-full max-w-444 px-5 sm:px-8 md:px-10 lg:px-16 xl:px-20 2xl:px-24;
 }
 
 /* ===== Headings & Text ===== */
-.heading {
-  @apply text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide text-[var(--foreground)];
+.heading1 {
+  @apply text-2xl md:text-3xl lg:text-4xl font-bold tracking-wide text-foreground;
 }
 
-.secondary-heading {
-  @apply text-xl sm:text-2xl font-semibold text-[var(--foreground)];
+.heading2 {
+  @apply text-xl sm:text-2xl font-semibold text-foreground;
 }
 
 .body-text {
@@ -125,7 +125,7 @@
 
 /* ===== Buttons ===== */
 .custom-btn {
-  @apply text-white font-semibold text-sm px-5 py-2.5 bg-[var(--primary)] rounded-md 
+  @apply text-white font-semibold text-sm px-5 py-2.5 bg-primary rounded-md 
   hover:scale-95 transition-transform duration-300 ease-out;
 }
 
@@ -134,12 +134,12 @@
   @apply flex flex-col gap-2.5 text-sm sm:text-base xl:text-lg text-black/75;
 }
 
-.parse-content h1 {
-  @apply text-xl sm:text-2xl font-semibold text-[var(--foreground)] mt-6;
+.parse-content h2 {
+  @apply text-xl sm:text-2xl font-semibold text-foreground mt-6;
 }
 
-.parse-content h2 {
-  @apply text-lg sm:text-xl font-semibold text-[var(--foreground)] mt-4;
+.parse-content h3 {
+  @apply text-lg sm:text-xl font-semibold text-foreground mt-4;
 }
 
 .parse-content ul {
@@ -293,4 +293,7 @@
 }
 .bg-secondary {
   background-color: #FEED00;
+}
+.text-heading {
+  @apply text-[26px] md:text-[32px] font-bold text-black ;
 }

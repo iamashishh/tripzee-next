@@ -102,7 +102,7 @@ export default function BlogStories() {
       <section className="w-full max-container mx-auto  md:px-6 lg:px-0">
         {/* Header */}
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-[26px] text-nowrap md:text-[40px] font-extrabold text-[#1C1C1C]">
+          <h2 className="text-heading text-nowrap">
             Blog & Stories
           </h2>
 

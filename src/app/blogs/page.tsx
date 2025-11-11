@@ -15,9 +15,9 @@ export default function page() {
       </div>
 <BlogStories/>
 <div className=''>
-    <h2 className='text-[20px] max-container text-black  '>
+    {/* <h2 className='text-heading max-container   '>
         Explore All Blogs
-    </h2>
+    </h2> */}
     < BlogStories/>
 </div>
     </main>

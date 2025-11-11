@@ -1,15 +1,13 @@
 "use client";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { BsShieldCheck, BsPeople, BsGift, BsHeadset } from "react-icons/bs";
-import { AiFillStar } from "react-icons/ai";
 import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 
 export default function WhyTripzeeSection() {
-  const [scrollProgress, setScrollProgress] = useState(0);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: false }, [
+  const [, setScrollProgress] = useState(0);
+  const [, setCurrentIndex] = useState(0);
+  const [, emblaApi] = useEmblaCarousel({ loop: false }, [
     WheelGesturesPlugin(),
   ]);
 
@@ -68,7 +66,7 @@ export default function WhyTripzeeSection() {
       <section className="w-full  max-container py-8 bg-white ">
         <div className="flex justify-between">
           <div className="flex  flex-col gap-3">
-            <h2 className="sm:text-3xl text-[26px] text-black font-extrabold tracking-tight">
+            <h2 className="text-heading tracking-tight">
               Why Tripzee Holidays?
             </h2>
             <p className="max-w-[600px] text-[18px] text-gray-600 leading-normal">

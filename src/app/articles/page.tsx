@@ -41,7 +41,7 @@ const KashmirSection = () => {
           <div className="text-gray-800">
             {posts.map((post, index) => (
               <div key={index} className="mb-10">
-                <h2 className="text-[22px] sm:text-[24px] md:text-[26px] font-bold text-[#111] mb-3">
+                <h2 className="text-heading mb-3">
                   {post.title}
                 </h2>
                 <p className="text-gray-600 leading-relaxed mb-3 text-[15px] sm:text-[16px]">

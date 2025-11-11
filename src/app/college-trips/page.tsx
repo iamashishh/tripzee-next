@@ -149,7 +149,7 @@ function page() {
       <Reviews />
       <div>
         {" "}
-        <h1 className="text-3xl font-extrabold text-black max-container">
+        <h1 className="text-heading max-container">
           College Trips Moments!
         </h1>
         <MomentsGallery />

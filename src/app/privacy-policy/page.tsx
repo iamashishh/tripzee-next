@@ -46,8 +46,8 @@ export default function page() {
 <div className='bg-white max-container py-10'>
   {terms.map((term, index) => (
     <section key={index} className="mb-6">
-      <h2 className="text-xl text-black font-semibold mb-2">{term.title}</h2>
-      <p className="text-gray-700">{term.content}</p>
+      <h2 className="text-heading mb-2">{term.title}</h2>
+      <p className="text-lg text-gray-700">{term.content}</p>
     </section>
   ))}
 </div>

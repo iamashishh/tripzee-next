@@ -30,7 +30,7 @@ export default function DestinationCategories() {
     <main className="bg-white  overflow-hidden">
       <section className="w-full  max-container mx-auto py-10">
         {/* Title */}
-        <h2 className="text-[26px]  md:text-[42px] font-extrabold mb-3 md:mb-6 text-black">
+        <h2 className="text-heading mb-3 md:mb-6 text-black">
           Explore Destinations
         </h2>
 

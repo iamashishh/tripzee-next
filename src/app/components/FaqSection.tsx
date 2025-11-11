@@ -64,7 +64,7 @@ const FaqSection: React.FC<FaqSectionProps> = ({ title = "FAQ's" }) => {
       <section className="w-full flex justify-center">
         <div className="w-full max-w-5xl bg-[#FFFCED] rounded-3xl py-10 px-6 md:px-10 shadow-sm">
           {/* ✅ Dynamic Title */}
-          <h2 className="text-center text-black text-3xl font-bold mb-10">
+          <h2 className="text-center text-heading mb-10">
             {title}
           </h2>
 

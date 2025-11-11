@@ -55,7 +55,7 @@ export default function Reviews({
         <div className="flex  justify-between">
           <div>
             {" "}
-            <h2 className="text-[26px]  md:text-3xl text-black font-extrabold tracking-tight">
+            <h2 className="text-heading  tracking-tight">
               {title}
             </h2>
             <p className=" text-[14px] sm:text-lg text-gray-600  leading-normal">

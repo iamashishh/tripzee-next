@@ -81,7 +81,7 @@ export default function HeroSection() {
       <div className="relative z-10 max-container px-5 lg:px-16 h-full flex flex-col lg:justify-between">
         {/* Top Text Section */}
         <div className="pt-10 lg:pt-28 w-full max-w-2xl">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-snug text-left sm:text-left">
+          <h1 className="text-4xl  sm:text-5xl md:text-6xl font-extrabold text-white leading-snug text-left sm:text-left">
             Sirf Trip Nahi, <br /> Memories Banao
           </h1>
           <p className="text-white/90 md:mt-4 mt-2 font-medium text-base md:text-lg leading-tight">
