@@ -155,7 +155,7 @@ Wander Beyond Ordinary"
           </div>
 
           {/* Circle 3 */}
-          <div className="shrink-0 relative flex flex-col items-center text-center z-30">
+          <div className="shrink-0 relative flex flex-col items-center text-center z-21">
             <div className="w-44 h-44 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-yellow-400 rounded-full opacity-70 flex items-center justify-center">
               <h3 className="font-bold text-xl text-black px-4">OUR VISION</h3>
             </div>

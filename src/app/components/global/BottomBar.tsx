@@ -10,6 +10,7 @@ import {
   MdOutlineExplore,
   MdOutlinePermContactCalendar,
   MdOutlineTravelExplore,
+  MdSlowMotionVideo,
 } from "react-icons/md";
 import { Mail, PhoneCall } from "lucide-react";
 
@@ -75,14 +76,14 @@ export default function BottomBar() {
         href="/search"
         className="flex flex-col items-center justify-center gap-1"
       >
-        <MdOutlineTravelExplore
+<MdSlowMotionVideo 
           className={`size-6 ${
-            isActive("/search") ? "text-[#FFE926] scale-110" : "opacity-80"
+            isActive("/Reelscarousel") ? "text-[#FFE926] scale-110" : "opacity-80"
           }`}
         />
         <p
           className={`text-[11px] ${
-            isActive("/search") ? "text-[#FFE926]" : "opacity-70"
+            isActive("/Reelscarousel") ? "text-[#FFE926]" : "opacity-70"
           }`}
         >
           Search

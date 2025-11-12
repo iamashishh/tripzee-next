@@ -288,7 +288,7 @@ const Footer = () => {
                   <ul className="space-y-2 text-sm">
                     <li>
                       <Link
-                        href="/about"
+                        href="/about-us"
                         className="hover:text-gray-600 transition"
                       >
                         About us
@@ -296,7 +296,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        href="/contact"
+                        href="/contact-us"
                         className="hover:text-gray-600 transition"
                       >
                         Contact us
@@ -304,7 +304,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        href="/privacy"
+                        href="/privacy-policy"
                         className="hover:text-gray-600 transition"
                       >
                         Privacy & policy
@@ -322,7 +322,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        href="/blog"
+                        href="/blogs"
                         className="hover:text-gray-600 transition"
                       >
                         Blog
@@ -467,7 +467,7 @@ const Footer = () => {
                   <ul className="space-y-2 text-sm">
                     <li>
                       <Link
-                        href="/packages/mice"
+                        href="/MICE"
                         className="hover:text-gray-600 transition"
                       >
                         MICE Tours
@@ -475,7 +475,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        href="/packages/college"
+                        href="/college-trips"
                         className="hover:text-gray-600 transition"
                       >
                         College Trips
@@ -483,7 +483,7 @@ const Footer = () => {
                     </li>
                     <li>
                       <Link
-                        href="/packages/honeymoon"
+                        href="/honeymoon-escapes"
                         className="hover:text-gray-600 transition"
                       >
                         Honeymoon Packages
@@ -509,7 +509,7 @@ const Footer = () => {
             </div>
             <div className="flex  gap-3 sm:gap-2 mt-2 md:mt-0">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/tripzee_holidays?igsh=MXA5dG9oeW93YXJlZA=="
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 border border-white text-[12px] sm:text-lg  px-2 py-1.5 rounded-full hover:bg-gray-800 transition"
@@ -517,7 +517,7 @@ const Footer = () => {
                 <FaInstagram /> Instagram
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/tripzeeholidays"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 border border-white  text-[12px] sm:text-lg px-2  py-1.5 rounded-full hover:bg-gray-800 transition"
