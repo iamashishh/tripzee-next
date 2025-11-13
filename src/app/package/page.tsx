@@ -117,7 +117,9 @@ const IconClose = ({ className = "w-4 h-4" }) => (
 
 export default function TourDetails() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [openItineraryIndex, setOpenItineraryIndex] = useState<number | null>(null);
+  const [openItineraryIndex, setOpenItineraryIndex] = useState<number | null>(
+    null
+  );
 
   const policies = [
     {
@@ -134,6 +136,10 @@ export default function TourDetails() {
 
   const toggleAccordion = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const toggleItinerary = (idx: number) => {
+    setOpenItineraryIndex(openItineraryIndex === idx ? null : idx);
   };
 
   const IconChevronDown = ({ className = "w-5 h-5" }) => (
@@ -385,20 +391,48 @@ export default function TourDetails() {
                 Trip Itinerary
               </h3>
 
-              {[1, 2, 3, 4, 5, 6].map((day) => (
+              {[1, 2, 3, 4, 5, 6].map((day, idx) => (
                 <div
                   key={day}
-                  className="flex justify-between items-center border border-gray-200 rounded-2xl px-4 py-3 mb-3 shadow-sm hover:shadow-md transition-all cursor-pointer"
+                  className="border border-gray-200 rounded-2xl px-4 py-3 mb-3 shadow-sm transition-all"
                 >
-                  <div className="flex items-center gap-3">
-                    <span className="bg-black text-white text-sm font-semibold px-3 py-1 rounded-full">
-                      Day {day}
+                  {/* Header */}
+                  <div
+                    onClick={() => toggleItinerary(idx)}
+                    className="flex justify-between items-center cursor-pointer"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="bg-black text-white text-sm font-semibold px-3 py-1 rounded-full">
+                        Day {day}
+                      </span>
+                      <p className="text-gray-800 font-medium">
+                        Your City - Jodhpur
+                      </p>
+                    </div>
+
+                    {/* + Icon Rotation */}
+                    <span
+                      className={`text-xl font-bold text-gray-600 transform transition-transform duration-300 ${
+                        openItineraryIndex === idx ? "rotate-45" : ""
+                      }`}
+                    >
+                      +
                     </span>
-                    <p className="text-gray-800 font-medium">
-                      Your City - Jodhpur
+                  </div>
+
+                  {/* Drawer Content */}
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      openItineraryIndex === idx ? "max-h-40 mt-3" : "max-h-0"
+                    }`}
+                  >
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Sed ut perspiciatis unde omnis iste natus error sit
+                      voluptatem accusantium. This paragraph will show when the
+                      drawer is open.
                     </p>
                   </div>
-                  <span className="text-xl font-bold text-gray-500">+</span>
                 </div>
               ))}
             </div>
@@ -553,16 +587,16 @@ export default function TourDetails() {
                     >
                       <span>{item.title}</span>
                       <IconChevronDown
-                        className={`w-5 h-5 text-gray-700 transform transition-transform duration-300 ${
+                        className={`w-5 h-5 text-gray-700 transform transition-transform duration-500 ease-in-out ${
                           openIndex === index ? "rotate-180" : ""
                         }`}
                       />
                     </button>
                     <div
-                      className={`px-5 pb-4 text-gray-600 text-sm transition-all duration-300 ease-in-out ${
+                      className={`px-5 text-gray-600 text-sm transition-all duration-500 ease-in-out overflow-hidden ${
                         openIndex === index
-                          ? "max-h-40 opacity-100"
-                          : "max-h-0 opacity-0 overflow-hidden"
+                          ? "max-h-96 opacity-100 pb-4 mt-2"
+                          : "max-h-0 opacity-0 pb-0 mt-0"
                       }`}
                     >
                       {item.content}
@@ -604,16 +638,16 @@ export default function TourDetails() {
                   >
                     <span>{item.title}</span>
                     <IconChevronDown
-                      className={`w-5 h-5 text-gray-700 transform transition-transform duration-300 ${
+                      className={`w-5 h-5 text-gray-700 transform transition-transform duration-500 ease-in-out ${
                         openIndex === index ? "rotate-180" : ""
                       }`}
                     />
                   </button>
                   <div
-                    className={`px-5 pb-4 text-gray-600 text-sm transition-all duration-300 ease-in-out ${
+                    className={`px-5 text-gray-600 text-sm transition-all duration-500 ease-in-out overflow-hidden ${
                       openIndex === index
-                        ? "max-h-40 opacity-100"
-                        : "max-h-0 opacity-0 overflow-hidden"
+                        ? "max-h-96 opacity-100 pb-4 mt-2"
+                        : "max-h-0 opacity-0 pb-0 mt-0"
                     }`}
                   >
                     {item.content}

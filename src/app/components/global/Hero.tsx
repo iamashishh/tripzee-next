@@ -49,7 +49,7 @@ const Hero: React.FC<HeroProps> = ({
         {showButton && (
           <button
             onClick={onButtonClick}
-            className="mt-5 inline-block bg-yellow-400 text-black font-semibold px-4 sm:px-6 py-2 rounded-full shadow hover:bg-yellow-300 transition"
+            className="mt-5 inline-block bg-secondary text-black font-semibold px-4 sm:px-6 py-2 rounded-full shadow hover:bg-yellow-300 transition"
           >
             {buttonText}
           </button>
