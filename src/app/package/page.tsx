@@ -11,6 +11,9 @@ import {
 } from "@/components/ui/drawer";
 import FaqSection from "../components/FaqSection";
 import Reviews from "../components/global/Reviews";
+import TripSection from "../components/sections/TripSection";
+import BookingWidget from "../../components/BookingWidget";
+import PriceDisplay from "../../components/PriceDisplay";
 
 // Inline SVG icon components to avoid react-icons dependency issues
 const IconMap = ({ className = "w-5 h-5" }) => (
@@ -114,6 +117,7 @@ const IconClose = ({ className = "w-4 h-4" }) => (
 
 export default function TourDetails() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openItineraryIndex, setOpenItineraryIndex] = useState<number | null>(null);
 
   const policies = [
     {
@@ -573,16 +577,8 @@ export default function TourDetails() {
           <div className="lg:sticky lg:top-32 lg:h-fit space-y-6">
             <div className="bg-white border rounded-xl shadow-md overflow-hidden">
               <div className="p-6">
-                <p className="text-base text-gray-700 mb-1 font-medium">
-                  Price From
-                </p>
-                <h2 className="text-heading mb-1">
-                  Rs. 39,000/-
-                </h2>
-                <p className="line-through text-gray-700 text-[22px] font-bold mb-4">
-                  89,999 INR/-
-                </p>
-                <button className="w-full bg-[#FFCC00] text-base hover:bg-[#FFD633] text-black font-semibold py-3 rounded-full transition-all">
+                <PriceDisplay />
+                <button className="w-full bg-secondary text-base hover:bg-[#FFD633] text-black font-semibold py-3 rounded-full transition-all">
                   Book Now
                 </button>
               </div>
@@ -591,57 +587,7 @@ export default function TourDetails() {
               </button>
             </div>
 
-            <div className="bg-white border rounded-xl shadow-md p-6">
-              <h3 className="text-xl text-center font-semibold mb-4 text-black">
-                Book This Tour
-              </h3>
-
-              <select className="w-full text-base border border-gray-300 rounded-md px-3 py-2 text-gray-700 mb-5 focus:ring-2 focus:ring-[#FFCC00]">
-                <option>Select Date</option>
-              </select>
-
-              <div>
-                <h4 className="text-base font-semibold text-gray-800 mb-3">
-                  Travellers Counts
-                </h4>
-                {["Double Sharing", "Triple Sharing", "Quad Sharing"].map(
-                  (type, i) => (
-                    <div
-                      key={i}
-                      className="flex justify-between items-center py-3 border-b last:border-b-0"
-                    >
-                      <div>
-                        <p className="font-medium text-black text-base">
-                          {type}
-                        </p>
-                        <p className="text-[12px] text-gray-500">
-                          Price: 89,999 INR/-
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <button className="w-7 h-7 border border-gray-300 rounded-full flex items-center justify-center text-lg font-bold text-gray-700">
-                          −
-                        </button>
-                        <span className="font-semibold text-gray-700">3</span>
-                        <button className="w-7 h-7 border border-gray-300 rounded-full flex items-center justify-center text-lg font-bold text-gray-700">
-                          +
-                        </button>
-                      </div>
-                    </div>
-                  )
-                )}
-              </div>
-
-              <button className="mt-6 w-full text-base bg-[#FFCC00] hover:bg-[#FFD633] text-black font-semibold py-3 rounded-full transition-all">
-                Book Now
-              </button>
-
-              <p className="text-xs text-gray-600 mt-4 leading-relaxed">
-                <span className="font-bold text-[12px] text-black">Note:</span>{" "}
-                Lorem ipsum dolor sit amet, adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua
-              </p>
-            </div>
+            <BookingWidget />
           </div>
 
           {/* POLICY ACCORDION SECTION - Desktop: appears here, Mobile: hidden */}
@@ -678,9 +624,9 @@ export default function TourDetails() {
           </div>
         </div>
       </div>
-      <Reviews/>
-      <FaqSection/>
-
+      <Reviews />
+      <FaqSection />
+      <TripSection title="Similar Packages" />
     </main>
   );
 }

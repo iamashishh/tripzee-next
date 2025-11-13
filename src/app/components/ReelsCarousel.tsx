@@ -17,7 +17,7 @@ export default function ReelsCarousel() {
   );
 
   const videosRef = useRef<Array<HTMLVideoElement | null>>([]);
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [, setCurrentSlide] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   const reels = [
@@ -58,7 +58,6 @@ export default function ReelsCarousel() {
     },
   ];
 
-  // ✅ Global mute state
   const [isMuted, setIsMuted] = useState(true);
 
   const pauseAll = useCallback(() => {
@@ -241,7 +240,7 @@ export default function ReelsCarousel() {
         <div className="mt-6 px-4 max-w-[300px] mx-auto">
           <ProgressBar
             progress={scrollProgress}
-            activeIndex={currentSlide}
+            activeIndex={0}
             total={reels.length}
           />
         </div>

@@ -113,18 +113,18 @@ export function NavigationMenuDemo() {
               <li>
                 <NavigationMenuLink asChild>
                   <Link href="/upcoming-trips">
-                    <div className="font-bold text-normal">Upcoming Trips</div>
+                    <div className="font-semibold text-normal">Upcoming Trips</div>
                                  </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
                   <Link href="/MICE">
-                    <div className="font-bold text-normal">MICE</div>
+                    <div className="font-semibold text-normal">MICE</div>
               
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
                   <Link href="/college-trips">
-                    <div className="font-bold text-normal">College Trips</div>
+                    <div className="font-semibold text-normal">College Trips</div>
                 
                   </Link>
                 </NavigationMenuLink>
@@ -146,19 +146,19 @@ export function NavigationMenuDemo() {
             <ul className="grid w-[200px] gap-4">
               <li>
                 <NavigationMenuLink asChild>
-                  <Link href="/contact-us" className="flex items-center gap-2">
+                  <Link href="/contact-us" className="flex font-semibold items-center gap-2">
                     <CircleHelpIcon />
                     Contact Us
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="/articles" className="flex items-center gap-2">
+                  <Link href="/articles" className="flex font-semibold items-center gap-2">
                     <CircleIcon />
                     Article
                   </Link>
                 </NavigationMenuLink>
                 <NavigationMenuLink asChild>
-                  <Link href="/about-us" className="flex items-center gap-2">
+                  <Link href="/about-us" className="flex font-semibold items-center gap-2">
                     <CircleCheckIcon />
                     About Us
                   </Link>

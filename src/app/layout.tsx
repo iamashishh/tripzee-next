@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import BottomBar from "./components/global/BottomBar";
 import Footer from "./components/Footer";
+import { ReduxProvider } from "../components/ReduxProvider";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -25,10 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} antialiased font-sans`}>
-        <BottomBar />
-        <Navbar />
-        {children}
-        <Footer />
+        <ReduxProvider>
+          <BottomBar />
+          <Navbar />
+          {children}
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );
