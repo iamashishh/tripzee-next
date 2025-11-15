@@ -4,15 +4,12 @@ import { usePathname } from "next/navigation";
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import Link from "next/link";
 
-import { FaWhatsapp } from "react-icons/fa";
 import { TiHome } from "react-icons/ti";
 import {
   MdOutlineExplore,
   MdOutlinePermContactCalendar,
-  MdOutlineTravelExplore,
   MdSlowMotionVideo,
 } from "react-icons/md";
-import { Mail, PhoneCall } from "lucide-react";
 
 export default function BottomBar() {
   const pathname = usePathname();
@@ -73,12 +70,12 @@ export default function BottomBar() {
 
       {/* SEARCH */}
       <Link
-        href="/search"
+        href="/reels"
         className="flex flex-col items-center justify-center gap-1"
       >
 <MdSlowMotionVideo 
           className={`size-6 ${
-            isActive("/Reelscarousel") ? "text-[#FFE926] scale-110" : "opacity-80"
+            isActive("/reels") ? "text-[#FFE926] scale-110" : "opacity-80"
           }`}
         />
         <p
@@ -86,7 +83,7 @@ export default function BottomBar() {
             isActive("/Reelscarousel") ? "text-[#FFE926]" : "opacity-70"
           }`}
         >
-          Search
+          Reels
         </p>
       </Link>
 
