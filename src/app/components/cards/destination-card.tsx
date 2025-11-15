@@ -10,6 +10,7 @@ export const demoDestinations = [
       duration: "8 Days / 7 Nights",
       image: "/assets/tripppppdesti.webp",
       position: 1,
+      category: "domestic",
     },
   },
   {
@@ -20,6 +21,7 @@ export const demoDestinations = [
       duration: "5 Days / 4 Nights",
       image: "/assets/tripppppdesti.webp",
       position: 2,
+      category: "domestic",
     },
   },
   {
@@ -30,6 +32,7 @@ export const demoDestinations = [
       duration: "7 Days / 6 Nights",
       image: "/assets/tripppppdesti.webp",
       position: 3,
+      category: "international",
     },
   },
   {
@@ -40,6 +43,7 @@ export const demoDestinations = [
       duration: "6 Days / 5 Nights",
       image: "/assets/tripppppdesti.webp",
       position: 4,
+      category: "international",
     },
   },
   {
@@ -50,6 +54,7 @@ export const demoDestinations = [
       duration: "9 Days / 8 Nights",
       image: "/assets/hero.jpg",
       position: 5,
+      category: "international",
     },
   },
   {
@@ -60,6 +65,7 @@ export const demoDestinations = [
       duration: "7 Days / 6 Nights",
       image: "/assets/hero.jpg",
       position: 6,
+      category: "international",
     },
   },
   {
@@ -70,6 +76,7 @@ export const demoDestinations = [
       duration: "8 Days / 7 Nights",
       image: "/assets/hero.jpg",
       position: 7,
+      category: "international",
     },
   },
   {
@@ -80,6 +87,7 @@ export const demoDestinations = [
       duration: "6 Days / 5 Nights",
       image: "/assets/tripppppdesti.webp",
       position: 8,
+      category: "domestic",
     },
   },
 ];
@@ -88,6 +96,7 @@ interface DestinationCardProps {
   title: string;
   packages: number;
   image: string;
+  category: string;
 }
 
 const DestinationCard = ({ title, packages, image }: DestinationCardProps) => {

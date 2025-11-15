@@ -1,30 +1,7 @@
 "use client";
-import React, { useState } from "react";
 import DestinationSlider from "../../sliders/destination-slider";
-import { FaGlobeAsia, FaFlag } from "react-icons/fa";
-import { MdOutlineAllInclusive } from "react-icons/md";
-import { cn } from "@/lib/utils"; // if not available, remove usage
-
-const tabs = [
-  {
-    id: "all",
-    label: "All",
-    icon: <MdOutlineAllInclusive size={15} />,
-  },
-  {
-    id: "global",
-    label: "Global Escapes",
-    icon: <FaGlobeAsia size={15} />,
-  },
-  {
-    id: "india",
-    label: "India Gateways",
-    icon: <FaFlag size={15} />,
-  },
-];
 
 export default function DestinationCategories() {
-  const [activeTab, setActiveTab] = useState("all");
 
   return (
     <main className="bg-white  overflow-hidden">
@@ -33,28 +10,7 @@ export default function DestinationCategories() {
         <h2 className="text-heading mb-3 md:mb-6 text-black">
           Explore Destinations
         </h2>
-
-        {/* Filter Tabs */}
-        <div className="flex items-center gap-2 md:gap-6 md:mt-2 mb-6 overflow-x-auto hide-scrollbar">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
-              className={cn(
-                "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] md:text-[15px] font-semibold transition-all border whitespace-nowrap",
-                activeTab === tab.id
-                  ? "bg-black text-white border-black"
-                  : "bg-white text-black border-gray-200 hover:bg-gray-100"
-              )}
-            >
-              {tab.icon}
-              {tab.label}
-            </button>
-          ))}
-        </div>
-
-        {/* Slider with selected tab */}
-        <DestinationSlider />
+        <DestinationSlider showFilter={true} />
       </section>
     </main>
   );

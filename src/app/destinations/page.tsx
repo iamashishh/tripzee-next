@@ -5,9 +5,9 @@ import FaqSection from "../components/FaqSection";
 import { CalloutBanner } from "../components/global/CalloutBanner";
 import Hero from "../components/global/Hero";
 import OfferBanner from "../components/OfferBanner";
-import DestinationCategories from "../components/pages/home/destination-categories";
 import WhyTripzeeSection from "../components/WhyTripzeeSection";
 import Reviews from "../components/global/Reviews";
+import DestinationSlider from "../components/sliders/destination-slider";
 
 const data = [
   {
@@ -116,9 +116,7 @@ export default function HimachalPage() {
       </div>
       {/* All Tour Packages */}
       <div className="max-container overflow-hidden py-6">
-        <h1 className="text-heading mb-6">
-          All Tour Packages
-        </h1>
+        <h1 className="text-heading mb-6">All Tour Packages</h1>
 
         <div
           className="
@@ -148,10 +146,19 @@ export default function HimachalPage() {
 
       {/* Remaining Sections */}
       <OfferBanner />
-      <DestinationCategories />
+      <div className="bg-white  overflow-hidden">
+        <div className="w-full  max-container mx-auto py-10">
+          <h2 className="text-heading mb-3 md:mb-6 text-black">
+            Explore Destinations
+          </h2>
+          <DestinationSlider showFilter={false} />
+        </div>
+      </div>
       <WhyTripzeeSection />
 
-      <div className="bg-gray-100 py-12"><Reviews /></div>
+      <div className="bg-gray-100 py-12">
+        <Reviews />
+      </div>
       <FaqSection title="Himachal FAQ'S" />
       <BlogStories />
     </main>
