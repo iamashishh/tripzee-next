@@ -11,10 +11,9 @@ const KashmirSection = () => {
 
   return (
     <section className="w-full">
-      {/* HERO SECTION */}
       <div className="relative w-full h-[70vh] sm:h-[80vh] flex items-center justify-start">
         <Image
-          src="/assets/hero.jpg" // replace with your image
+          src="/assets/hero.jpg" 
           alt="Kashmir Group Tour"
           fill
           priority
@@ -34,10 +33,8 @@ const KashmirSection = () => {
         </div>
       </div>
 
-      {/* ARTICLE SECTION */}
       <div className="max-container w-full bg-white py-16 px-5 sm:px-10 lg:px-20">
         <div className="grid grid-cols-1 lg:grid-cols-[4.2fr_1fr] gap-8 lg:gap-12">
-          {/* Article Content - Left Column */}
           <div className="text-gray-800">
             {posts.map((post, index) => (
               <div key={index} className="mb-10">
@@ -54,7 +51,6 @@ const KashmirSection = () => {
             ))}
           </div>
 
-          {/* Posted Info Card - Right Column */}
           <div className="lg:order-last order-first">
             <div className="bg-gray-50 border border-gray-200 rounded-xl p-5 shadow-sm text-sm text-gray-800 w-full max-w-60 lg:sticky lg:top-8">
               <p className="mb-2">

@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useRef, useState, useCallback } from "react";
-import React from "react";
 
 export default function ReelsPage() {
   const videos = [
@@ -17,7 +16,7 @@ export default function ReelsPage() {
   const [playingStates, setPlayingStates] = useState<boolean[]>(
     new Array(videos.length).fill(false)
   );
-  const [isMuted, setIsMuted] = useState(true); // Start muted for autoplay compatibility
+  const [isMuted, setIsMuted] = useState(true); 
 
   const handleScroll = useCallback(() => {
     if (!containerRef.current) return;
@@ -25,16 +24,13 @@ export default function ReelsPage() {
     const scrollTop = containerRef.current.scrollTop;
     const containerHeight = window.innerHeight;
 
-    // Calculate which video should be active based on scroll position
     const newActiveIndex = Math.round(scrollTop / containerHeight);
 
-    // Ensure the index is within bounds
     const clampedIndex = Math.max(
       0,
       Math.min(newActiveIndex, videos.length - 1)
     );
 
-    // Only update if the active index actually changed
     if (clampedIndex !== activeIndex) {
       setActiveIndex(clampedIndex);
     }
@@ -44,7 +40,6 @@ export default function ReelsPage() {
     const video = videoRefs.current[index];
     if (!video) return;
 
-    // Only handle click for the currently active video
     if (index === activeIndex) {
       try {
         if (video.paused) {
@@ -88,7 +83,6 @@ export default function ReelsPage() {
     return () => container.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
-  // Auto play/pause videos based on active index
   useEffect(() => {
     const playVideo = async (video: HTMLVideoElement, index: number) => {
       try {
@@ -106,7 +100,7 @@ export default function ReelsPage() {
 
     const pauseVideo = (video: HTMLVideoElement, index: number) => {
       video.pause();
-      video.currentTime = 0; // Reset to beginning
+      video.currentTime = 0; 
       setPlayingStates((prev) => {
         const newState = [...prev];
         newState[index] = false;
@@ -119,16 +113,13 @@ export default function ReelsPage() {
       if (!video) return;
 
       if (index === activeIndex) {
-        // Play the active video
         playVideo(video, index);
       } else {
-        // Pause all other videos
         pauseVideo(video, index);
       }
     });
   }, [activeIndex]);
 
-  // Initialize first video to play on mount
   useEffect(() => {
     const timer = setTimeout(async () => {
       const firstVideo = videoRefs.current[0];
@@ -145,12 +136,11 @@ export default function ReelsPage() {
           console.error("Error initializing first video:", error);
         }
       }
-    }, 500); // Increased delay to ensure video is fully loaded
+    }, 500);
 
     return () => clearTimeout(timer);
   }, []);
 
-  // Sync muted state with all videos
   useEffect(() => {
     videoRefs.current.forEach((video) => {
       if (video) {
@@ -213,7 +203,6 @@ export default function ReelsPage() {
               onClick={() => handleVideoClick(index)}
             />
 
-            {/* Play/Pause Indicator - only show for active video when paused */}
             {!playingStates[index] && index === activeIndex && (
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none gap-4 animate-fade-in">
                 {/* Play Button */}
@@ -235,7 +224,6 @@ export default function ReelsPage() {
               </div>
             )}
 
-            {/* Pause Indicator - shows briefly when video is paused */}
             {playingStates[index] && index === activeIndex && (
               <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="bg-black/60 rounded-full p-4 backdrop-blur-sm animate-fade-out">
@@ -250,10 +238,9 @@ export default function ReelsPage() {
               </div>
             )}
 
-            {/* Always visible mute button in top-right corner */}
             <button
               onClick={(e) => {
-                e.stopPropagation(); // Prevent triggering video click
+                e.stopPropagation(); 
                 toggleMute();
               }}
               className="absolute top-4 right-4 bg-black/50 rounded-full p-2 text-white hover:bg-black/70 transition-all"
@@ -280,7 +267,6 @@ export default function ReelsPage() {
                   />
                 </svg>
               ) : (
-                // Unmuted icon
                 <svg
                   className="w-5 h-5"
                   fill="none"

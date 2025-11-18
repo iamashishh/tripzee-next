@@ -10,7 +10,6 @@ import FaqSection from "../components/FaqSection";
 import ContactSection from "../components/global/ContactSection";
 
 function page() {
-  // Array of static data for "Why Companies Love Traveling With Us"
   const features = [
     {
       title: "Tailored Trips That Fit Your Company’s Goals and Budget",
@@ -62,12 +61,10 @@ Our expert planners handle everything — itineraries, accommodations, transport
 
       <section className="w-full bg-white py-8 md:py-12">
         <div className="max-container mx-auto px-5 sm:px-10 lg:px-16">
-          {/* Section Title */}
           <h2 className="text-center text-heading mb-14">
             Why Companies Love Traveling with Us
           </h2>
 
-          {/* Features */}
           <div className="space-y-20 md:space-y-28">
             {features.map((feature, index) => (
               <div
@@ -76,7 +73,6 @@ Our expert planners handle everything — itineraries, accommodations, transport
                   feature.reverse ? "md:flex-row-reverse" : ""
                 }`}
               >
-                {/* Text Section */}
                 <div className="flex-1">
                   <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-black mb-4 leading-snug">
                     {feature.title}
@@ -86,7 +82,6 @@ Our expert planners handle everything — itineraries, accommodations, transport
                   </p>
                 </div>
 
-                {/* Image Section */}
                 <div className="flex-1 w-full">
                   <div className="relative w-full h-[220px] sm:h-[260px] md:h-[280px] lg:h-[400px] rounded-xl overflow-hidden">
                     <Image
@@ -136,7 +131,6 @@ Our expert planners handle everything — itineraries, accommodations, transport
             </button>
           </div>
 
-          {/* IMAGES CLUSTER */}
           <div className="flex  ">
             <div className="md:w-28 md:h-28 h-20 w-20 rounded-full overflow-hidden relative shadow-lg">
               <Image

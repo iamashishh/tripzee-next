@@ -18,7 +18,6 @@ export default function page() {
       <FaqSection
         title="Trip-Zee FAQ'S"
       />
-
     </main>
   )
 }

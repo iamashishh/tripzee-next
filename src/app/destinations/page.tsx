@@ -103,7 +103,6 @@ const data = [
 export default function HimachalPage() {
   return (
     <main className="bg-white">
-      {/* Hero Section */}
       <div className="max-container py-4 sm:py-6">
         <Hero
           title="Himachal Tour Packages"
@@ -114,7 +113,6 @@ export default function HimachalPage() {
       <div className=" mx-6">
         <CalloutBanner />
       </div>
-      {/* All Tour Packages */}
       <div className="max-container overflow-hidden py-6">
         <h1 className="text-heading mb-6">All Tour Packages</h1>
 
@@ -144,7 +142,6 @@ export default function HimachalPage() {
         </div>
       </div>
 
-      {/* Remaining Sections */}
       <OfferBanner />
       <div className="bg-white  overflow-hidden">
         <div className="w-full  max-container mx-auto py-10">

@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import Image from "next/image";
 import HeroSection from "../components/global/HeroSection";
 import TopDestinations from "../components/TopDestinations";
@@ -64,7 +63,6 @@ function page() {
                   </ul>
                 </div>
 
-                {/* Image Section */}
                 <div className="flex-1 w-full">
                   <div className="relative w-full h-[220px] sm:h-[260px] md:h-[280px] lg:h-[400px] rounded-xl overflow-hidden">
                     <Image
@@ -99,7 +97,6 @@ function page() {
       <WhyChooseUs />
       <div className="max-container sm:py-12 py-6 bg-white">
         <div className=" flex-col-reverse bg-[#FFFBDF] rounded-xl p-6 flex  md:flex-row justify-between md:items-center sm:gap-8 gap-4 relative">
-          {/* TEXT */}
           <div className="max-w-[700px] flex flex-col gap-3">
             <h3 className="text-[22px] text-black md:text-[28px] font-semibold">
               Ready to Plan Your Next Corporate Getaway?
@@ -114,7 +111,6 @@ function page() {
             </button>
           </div>
 
-          {/* IMAGES CLUSTER */}
           <div className="flex  ">
             <div className="md:w-28 md:h-28 h-20 w-20 rounded-full overflow-hidden relative shadow-lg">
               <Image

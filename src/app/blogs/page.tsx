@@ -1,11 +1,10 @@
-import React from 'react'
-import Hero from '../components/global/Hero'
-import BlogStories from '../components/blogs'
+import Hero from "../components/global/Hero";
+import BlogStories from "../components/blogs";
 
 export default function page() {
   return (
-   <main className="min-h-screen  bg-white flex flex-col">
-     <div className="max-container ">
+    <main className="min-h-screen  bg-white flex flex-col">
+      <div className="max-container ">
         <Hero
           title="Contact Us"
           subtitle="Create Unforgettable Memories in the Heart of the Himalayas."
@@ -13,13 +12,13 @@ export default function page() {
           showButton={false}
         />
       </div>
-<BlogStories/>
-<div className=''>
-    {/* <h2 className='text-heading max-container   '>
+      <BlogStories />
+      <div className="">
+        {/* <h2 className='text-heading max-container   '>
         Explore All Blogs
     </h2> */}
-    < BlogStories/>
-</div>
+        <BlogStories />
+      </div>
     </main>
-  )
+  );
 }

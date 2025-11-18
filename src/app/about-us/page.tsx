@@ -1,4 +1,3 @@
-import React from "react";
 import Hero from "../components/global/Hero";
 import Image from "next/image";
 import WhyChooseUs from "../components/WhyChooseUs";
@@ -30,7 +29,6 @@ Wander Beyond Ordinary"
       </div>
       <div className="max-container sm:py-12 py-6 bg-white">
         <div className=" flex-col-reverse bg-[#FFFBDF] rounded-xl p-6 flex  md:flex-row justify-between md:items-center sm:gap-8 gap-4 relative">
-          {/* TEXT */}
           <div className="max-w-[700px] flex flex-col gap-3">
             <h3 className="text-[22px] text-black md:text-[28px] font-semibold">
               Ready to Plan Your Next Corporate Getaway?
@@ -45,7 +43,6 @@ Wander Beyond Ordinary"
             </button>
           </div>
 
-          {/* IMAGES CLUSTER */}
           <div className="flex  ">
             <div className="md:w-28 md:h-28 h-20 w-20 rounded-full overflow-hidden relative shadow-lg">
               <Image
@@ -123,7 +120,6 @@ Wander Beyond Ordinary"
           Welcome to Tripzee Holidays
         </h2>
 
-        {/* Container for circles */}
         <div className="relative flex flex-col md:flex-row items-center md:items-start justify-center w-full overflow-x-auto md:overflow-x-visible scrollbar-hide px-4 md:px-0 md:space-x-[-60px] gap-10 md:gap-0">
           {/* Circle 1 */}
           <div className="shrink-0 relative flex flex-col items-center text-center">
@@ -140,7 +136,6 @@ Wander Beyond Ordinary"
             </p>
           </div>
 
-          {/* Circle 2 */}
           <div className="shrink-0 relative flex flex-col items-center text-center z-20">
             <div className="w-44 h-44 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-yellow-400 rounded-full opacity-70 flex items-center justify-center">
               <h3 className="font-bold text-xl text-black px-4">OUR MISSION</h3>
@@ -154,7 +149,6 @@ Wander Beyond Ordinary"
             </p>
           </div>
 
-          {/* Circle 3 */}
           <div className="shrink-0 relative flex flex-col items-center text-center z-21">
             <div className="w-44 h-44 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-yellow-400 rounded-full opacity-70 flex items-center justify-center">
               <h3 className="font-bold text-xl text-black px-4">OUR VISION</h3>

@@ -182,7 +182,6 @@ function page() {
       </div>
       <div className="max-container sm:py-12 py-6 bg-white">
         <div className=" flex-col-reverse bg-[#FF69B21F] rounded-xl p-6 flex  md:flex-row justify-between md:items-center sm:gap-8 gap-4 relative">
-          {/* TEXT */}
           <div className="max-w-[600px] flex flex-col gap-3">
             <h3 className="text-[22px] text-black md:text-[28px] font-semibold">
               The Perfect Couple Getaway
@@ -197,7 +196,6 @@ function page() {
             </button>
           </div>
 
-          {/* IMAGES CLUSTER */}
           <div className="flex  ">
             <div className="md:w-28 md:h-28 h-20 w-20 rounded-full overflow-hidden relative shadow-lg">
               <Image
@@ -230,7 +228,6 @@ function page() {
         </div>
       </div>
          <div>
-           {" "}
            <h1 className="text-heading max-container">
               Moments!
            </h1>

@@ -15,7 +15,6 @@ import TripSection from "../components/sections/TripSection";
 import BookingWidget from "../../components/BookingWidget";
 import PriceDisplay from "../../components/PriceDisplay";
 
-// Inline SVG icon components to avoid react-icons dependency issues
 const IconMap = ({ className = "w-5 h-5" }) => (
   <svg
     className={className}
@@ -198,7 +197,6 @@ export default function TourDetails() {
 
     return (
       <section className="relative w-full max-w-5xl mx-auto mt-12 mb-16">
-        {/* Main Image */}
         <div className="relative w-full overflow-hidden rounded-3xl shadow-lg">
           <Image
             key={images[activeIndex].id}
@@ -208,8 +206,6 @@ export default function TourDetails() {
             height={700}
             className="w-full h-[450px] sm:h-[520px] object-cover transition-all duration-500 ease-in-out rounded-3xl"
           />
-
-          {/* Left Arrow */}
           <button
             onClick={handlePrev}
             className="absolute left-4 top-1/2 -translate-y-1/2 bg-white text-black w-9 h-9 rounded-full flex items-center justify-center shadow-md hover:bg-gray-100 transition-all"
@@ -217,7 +213,6 @@ export default function TourDetails() {
             <span className="text-lg font-bold">‹</span>
           </button>
 
-          {/* Right Arrow */}
           <button
             onClick={handleNext}
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#FFCC00] text-black w-9 h-9 rounded-full flex items-center justify-center shadow-md hover:bg-yellow-400 transition-all"
@@ -225,7 +220,6 @@ export default function TourDetails() {
             <span className="text-lg font-bold">›</span>
           </button>
 
-          {/* Small Preview Thumbnails */}
           <div className="absolute bottom-6 left-1/2 -translate-x-1/2 w-60 sm:w-[280px] h-20 sm:h-24 overflow-hidden">
             <div
               className="flex items-center h-full transition-transform duration-300 ease-in-out"
@@ -282,14 +276,11 @@ export default function TourDetails() {
       </div>
       <div className="w-full bg-white py-10 md:py-16">
         <div className="max-container mx-auto px-5 lg:px-10 grid grid-cols-1 lg:grid-cols-[1fr_350px] gap-10">
-          {/* LEFT CONTENT */}
           <div className="min-h-screen">
-            {/* TITLE SECTION */}
             <h1 className="text-heading mb-4 sm:mb-6">
               Rajasthan: Jodhpur- Jaisalmer- Jaipur
             </h1>
 
-            {/* ICON INFO */}
             <div className="flex flex-wrap sm:flex-nowrap  items-center  gap-3 sm:gap-6 mb-6 sm:mb-8 text-gray-700 text-[11px] sm:text-lg font-semibold">
               <div className="flex items-center gap-1 sm:gap-2 min-w-fit">
                 <span className="text-[#FFCC00] inline-flex">
@@ -311,7 +302,6 @@ export default function TourDetails() {
               </div>
             </div>
 
-            {/* TRIP OVERVIEW BOX */}
             <div className="border-t border-[#FFCC00]/30 rounded-md bg-linear-to-b from-[#FFFDEE] to-transparent p-5 sm:p-6 mb-8">
               <h3 className="text-lg sm:text-2xl font-semibold mb-3 text-black">
                 Trip Overview
@@ -354,7 +344,6 @@ export default function TourDetails() {
             </div>
             <div className=" w-full h-px bg-gray-300 my-4"></div>
 
-            {/* TRIP HIGHLIGHTS */}
             <div className="mb-10">
               <h3 className="text-2xl font-bold mb-3 text-black">
                 Trip Highlights
@@ -385,7 +374,6 @@ export default function TourDetails() {
               </ul>
             </div>
 
-            {/* TRIP ITINERARY SECTION */}
             <div className="border-t pt-6">
               <h3 className="text-xl sm:text-2xl font-bold mb-4 text-black">
                 Trip Itinerary
@@ -396,7 +384,6 @@ export default function TourDetails() {
                   key={day}
                   className="border border-gray-200 rounded-2xl px-4 py-3 mb-3 shadow-sm transition-all"
                 >
-                  {/* Header */}
                   <div
                     onClick={() => toggleItinerary(idx)}
                     className="flex justify-between items-center cursor-pointer"
@@ -420,7 +407,6 @@ export default function TourDetails() {
                     </span>
                   </div>
 
-                  {/* Drawer Content */}
                   <div
                     className={`overflow-hidden transition-all duration-300 ${
                       openItineraryIndex === idx ? "max-h-40 mt-3" : "max-h-0"
@@ -437,7 +423,6 @@ export default function TourDetails() {
               ))}
             </div>
 
-            {/* PACKAGE BREAKDOWN SECTION */}
             <div className="border-t pt-8 mt-8">
               <h3 className="sm:text-2xl text-xl font-bold mb-5 text-black">
                 Package Breakdown
@@ -511,7 +496,6 @@ export default function TourDetails() {
                 </table>
               </div>
             </div>
-            {/* TRAVELLING OPTIONS */}
             <div className="border-t pt-8 mt-8">
               <h3 className="sm:text-2xl text-xl font-bold mb-5 text-black">
                 Travelling Options
@@ -542,8 +526,6 @@ export default function TourDetails() {
                 </table>
               </div>
             </div>
-
-            {/* GALLERY SECTION */}
             <div className="border-t pt-10 mt-10">
               <h3 className="text-xl sm:text-2xl font-bold mb-5 text-black">
                 Gallery
@@ -551,7 +533,6 @@ export default function TourDetails() {
 
               <GallerySection />
             </div>
-            {/* KNOW BEFORE YOU GO */}
             <div className="border-t pt-10 mt-10">
               <h3 className="text-xl sm:text-2xl font-bold mb-3 text-black">
                 Know Before You Go
@@ -573,7 +554,6 @@ export default function TourDetails() {
               </ul>
             </div>
 
-            {/* POLICY ACCORDION SECTION - Mobile: appears here, Desktop: hidden */}
             <div className="lg:hidden border-t pt-10 mt-10">
               <div className="w-full mx-auto space-y-3">
                 {policies.map((item, index) => (
@@ -607,7 +587,6 @@ export default function TourDetails() {
             </div>
           </div>
 
-          {/* RIGHT SIDEBAR */}
           <div className="lg:sticky lg:top-32 lg:h-fit space-y-6">
             <div className="bg-white border rounded-xl shadow-md overflow-hidden">
               <div className="p-6">
@@ -623,8 +602,6 @@ export default function TourDetails() {
 
             <BookingWidget />
           </div>
-
-          {/* POLICY ACCORDION SECTION - Desktop: appears here, Mobile: hidden */}
           <div className="hidden lg:block border-t pt-10 mt-10">
             <div className="w-full mx-auto space-y-3">
               {policies.map((item, index) => (
