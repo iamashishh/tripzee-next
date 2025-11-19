@@ -4,6 +4,7 @@ import useEmblaCarousel from "embla-carousel-react";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 import Image from "next/image";
 import { HiVolumeOff, HiVolumeUp } from "react-icons/hi";
+import { FaPause, FaPlay } from "react-icons/fa";
 import ProgressBar from "./ui/ProgressBar";
 export default function ReelsCarousel() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
@@ -19,6 +20,9 @@ export default function ReelsCarousel() {
   const videosRef = useRef<Array<HTMLVideoElement | null>>([]);
   const [, setCurrentSlide] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [playingStates, setPlayingStates] = useState<boolean[]>(
+    new Array(7).fill(false)
+  );
 
   const reels = [
     {
@@ -66,7 +70,8 @@ export default function ReelsCarousel() {
         v.pause();
       }
     });
-  }, []);
+    setPlayingStates(new Array(reels.length).fill(false));
+  }, [reels.length]);
 
   const playIndex = useCallback(
     async (index: number) => {
@@ -75,6 +80,11 @@ export default function ReelsCarousel() {
       if (!vid) return;
       try {
         await vid.play();
+        setPlayingStates((prev) => {
+          const newStates = [...prev];
+          newStates[index] = true;
+          return newStates;
+        });
       } catch (error) {
         console.error("Failed to play video:", error);
       }
@@ -89,12 +99,13 @@ export default function ReelsCarousel() {
       const selectedIndex = emblaApi.selectedScrollSnap();
       setCurrentSlide(selectedIndex);
       setScrollProgress((selectedIndex + 1) / reels.length);
+      // Remove automatic play on select - let user control playback manually
     };
 
     const onInit = () => {
       setCurrentSlide(0);
       setScrollProgress(1 / reels.length);
-      playIndex(0);
+      // Don't auto-play on init - let user click to play
     };
 
     emblaApi.on("select", onSelect);
@@ -104,7 +115,7 @@ export default function ReelsCarousel() {
       emblaApi.off("select", onSelect);
       emblaApi.off("init", onInit);
     };
-  }, [emblaApi, playIndex, reels.length]);
+  }, [emblaApi, reels.length]);
 
   const togglePlayPause = useCallback(
     (index: number) => {
@@ -115,6 +126,11 @@ export default function ReelsCarousel() {
         playIndex(index);
       } else {
         vid.pause();
+        setPlayingStates((prev) => {
+          const newStates = [...prev];
+          newStates[index] = false;
+          return newStates;
+        });
       }
     },
     [playIndex]
@@ -138,22 +154,21 @@ export default function ReelsCarousel() {
     });
   };
 
-  // ✅ Sync global mute to all elements on change
   useEffect(() => {
     videosRef.current.forEach((v) => v && (v.muted = isMuted));
   }, [isMuted]);
 
   const handleVideoClick = useCallback(
     (index: number) => {
-      if (!emblaApi) {
-        togglePlayPause(index);
-        return;
-      }
-      const selected = emblaApi.selectedScrollSnap();
-      if (selected !== index) {
-        emblaApi.scrollTo(index);
-      } else {
-        togglePlayPause(index);
+      // Always toggle play/pause for the clicked video, regardless of carousel position
+      togglePlayPause(index);
+
+      // If it's not the currently selected slide, scroll to it without affecting playback
+      if (emblaApi) {
+        const selected = emblaApi.selectedScrollSnap();
+        if (selected !== index) {
+          emblaApi.scrollTo(index);
+        }
       }
     },
     [emblaApi, togglePlayPause]
@@ -164,9 +179,7 @@ export default function ReelsCarousel() {
   return (
     <main className=" bg-white overflow-hidden">
       <section className="w-full sm:block max-container  hidden  py-2  relative">
-        <h2 className="text-heading mb-6 px-4">
-          Live the Adventure
-        </h2>
+        <h2 className="text-heading mb-6 px-4">Live the Adventure</h2>
 
         <div className="overflow-hidden px-4" ref={emblaRef}>
           <div className="flex gap-4">
@@ -215,6 +228,33 @@ export default function ReelsCarousel() {
                   playsInline
                   preload="metadata"
                 />
+
+                {/* Play/Pause Button Overlay */}
+                <div
+                  onClick={() => handleVideoClick(i)}
+                  className={`
+                    absolute inset-0 flex items-center justify-center z-10
+                    transition-all duration-300 ease-in-out cursor-pointer
+                    ${
+                      playingStates[i]
+                        ? "opacity-0 hover:opacity-100"
+                        : "opacity-100"
+                    }
+                  `}
+                >
+                  <div
+                    className={`
+                    bg-black/60 backdrop-blur-sm rounded-full p-4
+                    transition-all duration-300 transform
+                    ${
+                      playingStates[i] ? "scale-0 hover:scale-100" : "scale-100"
+                    }
+                    hover:bg-black/80 hover:scale-110
+                  `}
+                  >
+                    <FaPlay className="text-white text-2xl" />
+                  </div>
+                </div>
 
                 <button
                   onClick={(e) => {

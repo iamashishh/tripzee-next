@@ -1,8 +1,6 @@
-import React from "react";
 import OfferBanner from "./components/OfferBanner";
 import DestinationCategories from "./components/pages/home/destination-categories";
 import TripSection from "./components/sections/TripSection";
-import HeroSection from "./components/HeroSection";
 import ReelsCarousel from "./components/ReelsCarousel";
 import ExploreMore from "./components/ExploreMore";
 import FaqSection from "./components/FaqSection";
@@ -10,6 +8,9 @@ import BlogStories from "./components/blogs";
 import WhyTripzeeSection from "./components/WhyTripzeeSection";
 import Reviews from "./components/global/Reviews";
 import ConnectWithExpert from "./components/ConnectWithExpert";
+import dynamic from "next/dynamic";
+const HeroSection = dynamic(() => import("./components/HeroSection"));
+
 
 export default function Page() {
   return (

@@ -5,9 +5,8 @@ export default function ReelsPage() {
   const videos = [
     "/reels/reelstrp.MP4",
     "/reels/reeltr.MP4",
-        "/reels/reelstrp.MP4",
-        "/reels/reeltr.MP4",
-    
+    "/reels/reelstrp.MP4",
+    "/reels/reeltr.MP4",
   ];
 
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -16,13 +15,13 @@ export default function ReelsPage() {
   const [playingStates, setPlayingStates] = useState<boolean[]>(
     new Array(videos.length).fill(false)
   );
-  const [isMuted, setIsMuted] = useState(true); 
+  const [isMuted, setIsMuted] = useState(true);
 
   const handleScroll = useCallback(() => {
     if (!containerRef.current) return;
 
     const scrollTop = containerRef.current.scrollTop;
-    const containerHeight = window.innerHeight;
+    const containerHeight = containerRef.current.clientHeight;
 
     const newActiveIndex = Math.round(scrollTop / containerHeight);
 
@@ -100,7 +99,7 @@ export default function ReelsPage() {
 
     const pauseVideo = (video: HTMLVideoElement, index: number) => {
       video.pause();
-      video.currentTime = 0; 
+      video.currentTime = 0;
       setPlayingStates((prev) => {
         const newState = [...prev];
         newState[index] = false;
@@ -184,12 +183,12 @@ export default function ReelsPage() {
       `}</style>
       <div
         ref={containerRef}
-        className="w-full h-screen snap-y snap-mandatory overflow-scroll scrollbar-none bg-black"
+        className="w-full h-[calc(100vh-140px)] snap-y snap-mandatory overflow-scroll scrollbar-none bg-black"
       >
         {videos.map((src, index) => (
           <div
             key={index}
-            className="w-full h-screen snap-start relative flex items-center justify-center"
+            className="w-full h-full snap-start relative flex items-center justify-center"
           >
             <video
               ref={(el) => {
@@ -240,7 +239,7 @@ export default function ReelsPage() {
 
             <button
               onClick={(e) => {
-                e.stopPropagation(); 
+                e.stopPropagation();
                 toggleMute();
               }}
               className="absolute top-4 right-4 bg-black/50 rounded-full p-2 text-white hover:bg-black/70 transition-all"
