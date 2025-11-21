@@ -66,7 +66,6 @@ export default function ReelsPage() {
 
   const toggleMute = () => {
     setIsMuted(!isMuted);
-    // Update all video elements
     videoRefs.current.forEach((video) => {
       if (video) {
         video.muted = !isMuted;
@@ -204,7 +203,6 @@ export default function ReelsPage() {
 
             {!playingStates[index] && index === activeIndex && (
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none gap-4 animate-fade-in">
-                {/* Play Button */}
                 <div
                   className="bg-black/60 rounded-full p-3 pointer-events-auto cursor-pointer hover:bg-black/80 transform hover:scale-110 transition-all duration-300 ease-out backdrop-blur-sm"
                   onClick={(e) => {
@@ -245,7 +243,6 @@ export default function ReelsPage() {
               className="absolute top-4 right-4 bg-black/50 rounded-full p-2 text-white hover:bg-black/70 transition-all"
             >
               {isMuted ? (
-                // Muted icon
                 <svg
                   className="w-5 h-5"
                   fill="none"
